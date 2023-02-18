@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grades checker</title>
+    <style>
+        .form-control{
+            width:150px;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        Create table with a few lines and colums with grade from 2-6 and automatic display the grade with words (string);
+    -->
+    <div id = "table-container">
+
+    </div>
+
+    <script>
+        function createTable(){
+            let html = '<table border="1">';
+            for(let i = 0; i < 3; i++){
+                html += '<tr>';
+                html += '<td>';
+                html += `<input oninput="inputGrade('grade${i}',this)" class="form-control" type = "number" min="2" max="6"/>`;  
+                html += '</td>';
+                html += '<td style ="width: 100px;">';
+                html += `<span id ="grade${i}"></span>`;
+                html += '</td>';    
+                html += '</tr>';
+            }
+
+            html += '</table>';
+
+            document.querySelector('#table-container').innerHTML = html;           
+        }
+
+        function inputGrade(id, inputElement){
+            let el = document.getElementById(id);
+            let grade = inputElement.value;
+            if(grade == 2){
+                el.innerHTML = "F";
+            }else if (grade == 3){
+                el.innerHTML = "D";
+            }else if (grade == 4){
+                el.innerHTML = "C";
+            }else if (grade == 5){
+                el.innerHTML = "B";
+            }else if(grade == 6){
+                el.innerHTML = "A";
+            }else {
+                el.innerHTML = "Invalide grade";
+            }
+        }
+
+        createTable();
+    </script>
+</body>
+</html>
