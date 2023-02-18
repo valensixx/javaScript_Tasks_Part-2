@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Day 1</label>
+    <input type="number" class="income"><br/>
+    <label for="">Day 2</label>
+    <input type="number" class="income"><br/>
+    <label for="">Day 3</label>
+    <input type="number" class="income"><br/>
+    <button onclick="total()">Show total</button>
+
+    <script>
+        function total(){
+            let items= document.querySelectorAll('.income');
+            let sum = 0;
+
+            for(let i=0; i < items.length; i++){
+                sum += parseInt(items[i].value);
+            }
+            console.log(sum);
+        }
+    </script>
+</body>
+</html>
