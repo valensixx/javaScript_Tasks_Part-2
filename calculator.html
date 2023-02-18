@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini calculator</title>
+    <style>
+        .container{
+            display: flex;
+            align-items: center;
+            justify-items: center;
+            width: 80%;
+            margin: 0 auto;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <label for="">First number</label>
+            <input type="Number" id="fn">
+        </div>
+        <div>
+            <label for="">Sign</label>
+            <input type="text" id="sign">
+        </div>
+        <div>
+            <label for="">Second number</label>
+            <input type="Number" id="sn">
+        </div>
+        <div>
+            <button onclick="calculate()">Result</button>
+        </div>
+    </div>
+    <script>
+        function calculate(){
+            let fn = document.querySelector('#fn').value;
+            let sign = document.querySelector('#sign').value;
+            let sn = document.querySelector('#sn').value;
+
+            fn = parseFloat(fn); 
+            sn = parseFloat(sn);
+
+            switch(sing){
+                case '+':
+                    alert(fn + sn);
+                    break;
+                case '-':
+                    alert(fn - sn);
+                    break;              
+                case '*': 
+                    alert(fn * sn);
+                    break;
+                case '/':
+                    alert(fn / sn);
+                    break;
+                default: 
+                    alert('Invalide sign');
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
